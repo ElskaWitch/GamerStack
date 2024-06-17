@@ -67,7 +67,8 @@
                 autoplaySpeed: 2000,
                 dots: true,
                 arrows: true,
-                centerMode: false,  // Désactive le centrage
+                variableWidth: true,  // Ajuste la largeur des slides
+                centerMode: false,    // Désactive le centrage
                 responsive: [
                     {
                         breakpoint: 1024,
@@ -75,14 +76,16 @@
                             slidesToShow: 2,
                             slidesToScroll: 1,
                             infinite: true,
-                            dots: true
+                            dots: true,
+                            variableWidth: true
                         }
                     },
                     {
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
+                            variableWidth: true
                         }
                     }
                 ]
@@ -96,7 +99,8 @@
                 autoplaySpeed: 2000,
                 dots: true,
                 arrows: true,
-                centerMode: false,  // Désactive le centrage
+                variableWidth: true,  // Ajuste la largeur des slides
+                centerMode: false,    // Désactive le centrage
                 responsive: [
                     {
                         breakpoint: 1024,
@@ -104,14 +108,16 @@
                             slidesToShow: 2,
                             slidesToScroll: 1,
                             infinite: true,
-                            dots: true
+                            dots: true,
+                            variableWidth: true
                         }
                     },
                     {
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
+                            variableWidth: true
                         }
                     }
                 ]
@@ -125,7 +131,8 @@
                 autoplaySpeed: 2000,
                 dots: true,
                 arrows: true,
-                centerMode: false,  // Désactive le centrage
+                variableWidth: true,  // Ajuste la largeur des slides
+                centerMode: false,    // Désactive le centrage
                 responsive: [
                     {
                         breakpoint: 1024,
@@ -133,14 +140,16 @@
                             slidesToShow: 2,
                             slidesToScroll: 1,
                             infinite: true,
-                            dots: true
+                            dots: true,
+                            variableWidth: true
                         }
                     },
                     {
                         breakpoint: 600,
                         settings: {
                             slidesToShow: 1,
-                            slidesToScroll: 1
+                            slidesToScroll: 1,
+                            variableWidth: true
                         }
                     }
                 ]
