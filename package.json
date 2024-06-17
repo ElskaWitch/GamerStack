@@ -21,6 +21,7 @@
         "daisyui": "^2.36.1",
         "paginate": "^0.2.0",
         "plugins": "^0.4.2",
+        "slick": "^1.12.2",
         "tailwind": "^4.0.0"
     }
 }

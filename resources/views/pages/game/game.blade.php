@@ -1,13 +1,150 @@
 {{-- resources/views/pages/game/game.blade.php --}}
 <x-app-layout title="Game">
-    <div id="card-container" class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 p-4">
-        @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Dynamic Game 1'])
-        @endcomponent
+    <div class="container mx-auto p-4 flex flex-col space-y-12">
 
-        @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Dynamic Game 2'])
-        @endcomponent
+        <!-- Section pour les jeux PS4 -->
+        <div class="carousel-section flex flex-col">
+            <h2 class="carousel-title text-white text-3xl mb-4 text-left">Jeux PS4</h2>
+            <div class="slider slider-ps4">
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu PS4 1'])
+                @endcomponent
 
-        @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Dynamic Game 3'])
-        @endcomponent
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu PS4 2'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu PS4 3'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu PS4 4'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu PS4 5'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu PS4 6'])
+                @endcomponent
+            </div>
+        </div>
+
+        <!-- Section pour les jeux Switch -->
+        <div class="carousel-section flex flex-col">
+            <h2 class="carousel-title text-white text-3xl mb-4 text-left">Jeux Switch</h2>
+            <div class="slider slider-switch">
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu Switch 1'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu Switch 2'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu Switch 3'])
+                @endcomponent
+            </div>
+        </div>
+
+        <!-- Section pour les jeux DS -->
+        <div class="carousel-section flex flex-col">
+            <h2 class="carousel-title text-white text-3xl mb-4 text-left">Jeux DS</h2>
+            <div class="slider slider-ds">
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu DS 1'])
+                @endcomponent
+
+                @component('components.cards.Card-game', ['imageUrl' => 'https://via.placeholder.com/400x300', 'title' => 'Jeu DS 2'])
+                @endcomponent
+
+            </div>
+        </div>
+
     </div>
+
+    <!-- Script pour initialiser Slick Carousel -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+            // Initialiser le carrousel pour PS4
+            $('.slider-ps4').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: true,
+                centerMode: false,  // Désactive le centrage
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            // Initialiser le carrousel pour Switch
+            $('.slider-switch').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: true,
+                centerMode: false,  // Désactive le centrage
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+
+            // Initialiser le carrousel pour DS
+            $('.slider-ds').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                dots: true,
+                arrows: true,
+                centerMode: false,  // Désactive le centrage
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
 </x-app-layout>
