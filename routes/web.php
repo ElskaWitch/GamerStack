@@ -4,6 +4,7 @@ use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ParametresController;
+use App\Http\Controllers\NoteController;
 
 
 Route::get('/', function () {
@@ -21,10 +22,7 @@ Route::get('/connexion', function () {
 Route::post('/connexion', 'ConnexionController@store')->name('connexion.submit');
 
 Route::get('/game', [GameController::class, 'index'])->name('game');
-
-
 Route::get('/game/{slug}', [GameController::class, 'show'])->name('game.show');
-
 
 Route::get('/create', function () {
     return view('pages.game.create');
@@ -35,6 +33,12 @@ Route::post('/game/store', [GameController::class, 'store'])->name('game.store')
 Route::get('/edit', function () {
     return view('pages.game.edit');
 })->name('edit');
+
+
+Route::get('/note/create', [NoteController::class, 'create'])->name('note.create');
+Route::get('/game/{game}/note/create', [NoteController::class, 'create'])->name('note.create');
+Route::post('/notes/store', [NoteController::class, 'store'])->name('note.store');
+
 
 Route::get('/parametres', function () {
     return view('pages.parametres');

@@ -8,7 +8,8 @@
             <button class="submit">Modifier le Jeu</button>
 
             <!-- Bouton Écrire une Note -->
-            <button class="submit">Écrire une Note</button>
+            <a href="{{ route('note.create', ['game' => $game['title']]) }}" class="submit">Écrire une Note</a>
+
 
             <!-- Bouton Supprimer le Jeu -->
             <button class="submit">Supprimer le Jeu</button>

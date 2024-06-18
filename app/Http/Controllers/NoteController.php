@@ -12,16 +12,18 @@ class NoteController extends Controller
      */
     public function index()
     {
-        $notes = Note::all();
-        return view('notes.index', compact('notes'));
+        return view('pages.note.create');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create($game)
     {
-        return view('notes.create');
+        // Ici vous pouvez ajuster selon la logique de votre application pour récupérer les détails du jeu
+        $gameTitle = $game; // Exemple de récupération du titre du jeu
+
+        return view('pages.note.create', compact('gameTitle'));
     }
 
     /**
@@ -31,7 +33,7 @@ class NoteController extends Controller
     {
         // Valider les données reçues du formulaire
         $request->validate([
-            'message' => 'required|string|max:255',
+            'message' => 'required|string',
         ]);
 
         // Créer un nouvel enregistrement de note dans la base de données
@@ -39,8 +41,8 @@ class NoteController extends Controller
         $note->message = $request->message;
         $note->save();
 
-        // Rediriger vers la page d'index des notes avec un message de succès
-        return redirect()->route('notes.index')->with('success', 'Note created successfully!');
+        // Rediriger vers une page appropriée ou afficher un message de succès
+        return redirect()->route('notes.index')->with('success', 'Note créée avec succès!');
     }
 
     /**
@@ -48,7 +50,7 @@ class NoteController extends Controller
      */
     public function show(Note $note)
     {
-        return view('notes.show', compact('note'));
+        return view('pages.note.show', compact('note'));
     }
 
     /**
@@ -56,7 +58,7 @@ class NoteController extends Controller
      */
     public function edit(Note $note)
     {
-        return view('notes.edit', compact('note'));
+        return view('pages.note.edit', compact('note'));
     }
 
     /**
