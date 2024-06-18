@@ -166,7 +166,7 @@
         border: 2px solid #9747FF;
         border-radius: 20px;
         transition: all 0.3s ease-in-out;
-        padding-left: 40px; /* Pour laisser de la place pour l'icône */
+        padding-left: 40px; 
         box-shadow: none;
         outline: none;
     }
@@ -180,9 +180,9 @@
         border: 2px solid #9747FF;
         border-radius: 20px;
         transition: all 0.3s ease-in-out;
-        appearance: none; /* Supprime l'apparence par défaut des navigateurs */
+        appearance: none; 
         background-color: #000116;
-        background-image: none; /* Supprime la flèche par défaut */
+        background-image: none; 
         box-shadow: none;
         outline: none;
     }

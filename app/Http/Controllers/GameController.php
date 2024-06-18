@@ -31,24 +31,27 @@ class GameController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'console' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+{
+    // Valider les données entrantes
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'console' => 'required|string|max:50',
+        'image' => 'required|image|max:2048', // validation pour le fichier image
+    ]);
 
-        $imageName = time().'.'.$request->image->extension();  
-        $request->image->move(public_path('images'), $imageName);
+    // Traiter le fichier image
+    $imagePath = $request->file('image')->store('images', 'public');
 
-        Game::create([
-            'title' => $request->title,
-            'console' => $request->console,
-            'image' => $imageName,
-        ]);
+    // Créer un nouveau jeu avec les données validées
+    Game::create([
+        'title' => $request->title,
+        'console' => $request->console,
+        'image' => $imagePath,
+    ]);
 
-        return redirect()->route('game')->with('success', 'Jeu ajouté avec succès.');
-    }
+    return redirect()->route('game.index')->with('success', 'Jeu ajouté avec succès.');
+}
+
     /**
      * Display the specified resource.
      */
