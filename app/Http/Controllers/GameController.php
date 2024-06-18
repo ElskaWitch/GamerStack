@@ -24,7 +24,7 @@ class GameController extends Controller
      */
     public function create()
     {
-        return view('games.create');
+        return view('pages.game.create');
     }
 
     /**
@@ -84,7 +84,7 @@ class GameController extends Controller
      */
     public function edit(Game $game)
     {
-        return view('games.edit', compact('game'));
+        return view('pages.game.edit', compact('game'));
     }
 
     /**
