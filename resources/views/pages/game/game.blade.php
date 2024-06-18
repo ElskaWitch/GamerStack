@@ -7,18 +7,25 @@
             <div class="flex space-x-4 items-center">
                 <!-- Input de recherche -->
                 <div class="relative">
-                    <input type="text" class="search-input bg-white text-black rounded-full pl-10 pr-4 py-2" placeholder="Rechercher un jeu...">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35m0 0a7.5 7.5 0 111.25-1.25L21 21zm-7.5-5.5a5 5 0 100-10 5 5 0 000 10z" />
+                    <input type="text" class="search-input bg-[#000116] text-white rounded-full pl-10 pr-4 py-2" placeholder="Rechercher un jeu...">
+                    <!-- Nouvelle icône de loupe -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute left-3 top-1/2 transform -translate-y-1/2 text-[#9747FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a7 7 0 100 14 7 7 0 000-14zM21 21l-4.35-4.35" />
                     </svg>
                 </div>
                 <!-- Filtre par console -->
-                <select class="filter bg-white text-black rounded-full py-2 pl-3 pr-8">
-                    <option value="">Tous</option>
-                    <option value="PS4">PS4</option>
-                    <option value="Switch">Switch</option>
-                    <option value="DS">DS</option>
-                </select>
+                <div class="relative">
+                    <select class="filter bg-[#000116] text-white rounded-full py-2 pl-3 pr-8">
+                        <option value="">Tous</option>
+                        <option value="PS4">PS4</option>
+                        <option value="Switch">Switch</option>
+                        <option value="DS">DS</option>
+                    </select>
+                    <!-- Chevron icon -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 absolute right-3 top-1/2 transform -translate-y-1/2 text-[#9747FF]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 9l6 6 6-6" />
+                    </svg>
+                </div>
             </div>
         </div>
 
@@ -157,24 +164,31 @@
 <style>
     .search-input {
         border: 2px solid #9747FF;
+        border-radius: 20px;
         transition: all 0.3s ease-in-out;
+        padding-left: 40px; /* Pour laisser de la place pour l'icône */
+        box-shadow: none;
+        outline: none;
     }
 
     .search-input:focus {
         border-color: #ffffff;
-        outline: none;
+        background-color: #000116;
     }
 
     .filter {
         border: 2px solid #9747FF;
+        border-radius: 20px;
         transition: all 0.3s ease-in-out;
-        padding-right: 1rem;
         appearance: none; /* Supprime l'apparence par défaut des navigateurs */
-        background: white url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0EwQTBBOCIgZD0iTTcsOGwtNCw0TDksMjJsLTMtMTNMMzQsOHoiLz48L3N2Zz4=") no-repeat right 0.75rem center;
+        background-color: #000116;
+        background-image: none; /* Supprime la flèche par défaut */
+        box-shadow: none;
+        outline: none;
     }
 
     .filter:focus {
         border-color: #ffffff;
-        outline: none;
+        background-color: #000116;
     }
 </style>
