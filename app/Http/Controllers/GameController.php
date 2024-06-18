@@ -52,10 +52,32 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Game $game)
-    {
-        return view('games.show', compact('game'));
+    public function show($slug)
+{
+    // Exemple de données pour le jeu. En pratique, vous récupérerez ces données de la base de données.
+    $games = [
+        'skyrim' => [
+            'title' => 'Skyrim',
+            'image' => 'https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png'
+        ],
+        'tekken-7' => [
+            'title' => 'Tekken 7',
+            'image' => 'https://image.api.playstation.com/cdn/EP0700/CUSA06014_00/60LMXmTtlbr3RwGglLc9awmBpcFRCC5S.png'
+        ],
+        // Ajoutez d'autres jeux ici
+    ];
+
+    // Vérifiez si le jeu avec le slug donné existe dans le tableau $games
+    if (!array_key_exists($slug, $games)) {
+        abort(404, 'Jeu non trouvé');
     }
+
+    // Récupérez les détails du jeu à partir du tableau $games
+    $game = $games[$slug];
+
+    // Retournez la vue game.show qui se trouve dans le dossier `pages/game`
+    return view('pages.game.show', compact('game'));
+}
 
     /**
      * Show the form for editing the specified resource.

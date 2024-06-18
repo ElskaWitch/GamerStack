@@ -22,6 +22,10 @@ Route::post('/connexion', 'ConnexionController@store')->name('connexion.submit')
 
 Route::get('/game', [GameController::class, 'index'])->name('game');
 
+
+Route::get('/game/{slug}', [GameController::class, 'show'])->name('game.show');
+
+
 Route::get('/create', function () {
     return view('pages.game.create');
 })->name('create');
