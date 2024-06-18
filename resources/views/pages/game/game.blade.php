@@ -5,7 +5,7 @@
         <!-- Section pour les jeux PS4 -->
         <div class="carousel-section flex flex-col">
             <h2 class="carousel-title text-white text-3xl mb-4 text-left">Jeux PS4</h2>
-            <div class="slider slider-ps4">
+            <div class="slider">
                 @component('components.cards.Card-game', ['imageUrl' => 'https://upload.wikimedia.org/wikipedia/en/1/15/The_Elder_Scrolls_V_Skyrim_cover.png', 'title' => 'Skyrim'])
                 @endcomponent
 
@@ -29,7 +29,7 @@
         <!-- Section pour les jeux Switch -->
         <div class="carousel-section flex flex-col">
             <h2 class="carousel-title text-white text-3xl mb-4 text-left">Jeux Switch</h2>
-            <div class="slider slider-switch">
+            <div class="slider">
                 @component('components.cards.Card-game', ['imageUrl' => 'https://upload.wikimedia.org/wikipedia/en/c/c6/The_Legend_of_Zelda_Breath_of_the_Wild.jpg', 'title' => 'Zelda BOTW'])
                 @endcomponent
 
@@ -44,7 +44,7 @@
         <!-- Section pour les jeux DS -->
         <div class="carousel-section flex flex-col">
             <h2 class="carousel-title text-white text-3xl mb-4 text-left">Jeux DS</h2>
-            <div class="slider slider-ds">
+            <div class="slider">
                 @component('components.cards.Card-game', ['imageUrl' => 'https://m.media-amazon.com/images/M/MV5BODVhZGFhNTEtNGQ0Yi00MjE4LWI4MGQtYjhlMjMyOTVlYzFkXkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_FMjpg_UX1000_.jpg', 'title' => 'Mario Kart'])
                 @endcomponent
 
@@ -59,72 +59,9 @@
     <!-- Script pour initialiser Slick Carousel -->
     <script type="text/javascript">
         $(document).ready(function(){
-            // Initialiser le carrousel pour PS4
-            $('.slider-ps4').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                dots: true,
-                arrows: true,
-                variableWidth: true,  // Ajuste la largeur des slides
-                centerMode: false,    // Désactive le centrage
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true,
-                            variableWidth: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            variableWidth: true
-                        }
-                    }
-                ]
-            });
-
-            // Initialiser le carrousel pour Switch
-            $('.slider-switch').slick({
-                slidesToShow: 3,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 2000,
-                dots: true,
-                arrows: true,
-                variableWidth: true,  // Ajuste la largeur des slides
-                centerMode: false,    // Désactive le centrage
-                responsive: [
-                    {
-                        breakpoint: 1024,
-                        settings: {
-                            slidesToShow: 2,
-                            slidesToScroll: 1,
-                            infinite: true,
-                            dots: true,
-                            variableWidth: true
-                        }
-                    },
-                    {
-                        breakpoint: 600,
-                        settings: {
-                            slidesToShow: 1,
-                            slidesToScroll: 1,
-                            variableWidth: true
-                        }
-                    }
-                ]
-            });
-
-            // Initialiser le carrousel pour DS
-            $('.slider-ds').slick({
+        
+            // Initialiser le carrousel
+            $('.slider').slick({
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 autoplay: true,

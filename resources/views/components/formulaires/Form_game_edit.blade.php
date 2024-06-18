@@ -36,7 +36,7 @@
     }
 
     /* Style pour le bouton */
-    button[type="submit"] {
+    .submit {
         background-color: #000116;
         color: white;
         font-weight: bold;
@@ -49,7 +49,7 @@
     }
 
     /* Style pour le hover du bouton */
-    button[type="submit"]:hover {
+    .submit:hover {
         background-color: #9747FF;
     }
 
@@ -75,5 +75,5 @@
         <input type="file" id="image" name="image" required>
     </div>
 
-    <button type="submit">Modifier</button>
+    <button type="submit" class="submit">Modifier</button>
 </form>

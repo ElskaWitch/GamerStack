@@ -17,17 +17,16 @@
     .sidebar hr {
         width: 80%;
         border: 1px solid white;
-        margin: 20px 0;
     }
 
     .sidebar a, .sidebar button {
         color: white;
         text-decoration: none;
         font-size: 18px;
-        padding: 10px 20px;
+        padding: 10px 70px;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         cursor: pointer;
         transition: color 0.3s;
         width: 100%;
@@ -45,14 +44,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-bottom: 20px;
     }
 
     .user-info img {
         border-radius: 50%;
         width: 6rem;
         height: 6rem;
-        margin-bottom: 10px;
+        margin: 1.5rem;
     }
 
     .sidebar-icon {
@@ -73,8 +71,8 @@
 </style>
 
 <nav class="sidebar">
-    <img src="{{ asset('img/logo_gamerstack.png') }}" alt="Logo GamerStack" style="width: 12rem;">
-    <hr>
+    <img src="{{ asset('img/logo_gamerstack.png') }}" alt="Logo GamerStack" style="width: 9rem;">
+    <hr style="margin-bottom: 5rem;">
     <a href="{{ route('game') }}" class="{{ request()->routeIs('game') ? 'active' : '' }}">
         <img src="{{ asset('img/game.svg') }}" alt="Mes jeux" class="sidebar-icon">Mes jeux
     </a>
@@ -84,20 +82,17 @@
     <a href="{{ route('edit') }}" class="{{ request()->routeIs('edit') ? 'active' : '' }}">
         <img src="{{ asset('img/edit.svg') }}" alt="Modifier" class="sidebar-icon">Modifier
     </a>
-    <hr>
+    <hr style="margin-top: 5rem;">
     <div class="user-info">
         <img src="{{ asset('img/user_placeholder.png') }}" alt="User Image">
         @auth
             <span>{{ Auth::user()->name }}</span>
         @endauth
     </div>
-    <a href="{{ route('parametres') }}" class="{{ request()->routeIs('parametres') ? 'active' : '' }}">
-        <img src="{{ asset('img/param.svg') }}" alt="Paramètres" class="sidebar-icon">Paramètres
+    <a href="{{ route('parametres') }}" class="{{ request()->routeIs('parametres') ? 'active' : '' }}" style="font-size: 11px;">
+        <img src="{{ asset('img/param.svg') }}" alt="Paramètres" class="sidebar-icon" style="width: 15px;">Paramètres
     </a>
-    <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit" class="logout">
-            <img src="{{ asset('img/logout.svg') }}" alt="Déconnexion" class="sidebar-icon">Déconnexion
-        </button>
-    </form>
+    <button type="submit" class="logout" style="font-size: 11px;">
+        <img src="{{ asset('img/logout.svg') }}" alt="Déconnexion" class="sidebar-icon" style="width: 15px;">Déconnexion
+    </button>
 </nav>
