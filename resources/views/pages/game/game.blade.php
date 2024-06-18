@@ -1,5 +1,6 @@
 <x-app-layout title="Game">
     <div class="container mx-auto p-4 flex flex-col space-y-12">
+    <h1 class="text-3xl font-bold text-white mb-4">Mes jeux</h1>
 
         <!-- Section pour les jeux PS4 -->
         <div class="carousel-section flex flex-col">

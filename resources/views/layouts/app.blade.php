@@ -25,8 +25,10 @@
     <style>
         body {
             background: linear-gradient(45deg, #000116, #210E47, #682AAE);
-            height: 100vh;
-         
+            background-attachment: fixed; /* Fixe le fond */
+            background-size: cover; /* Couvre toute la surface sans répétition */
+            background-repeat: no-repeat; /* Empêche la répétition */
+            min-height: 100vh; /* Assure la couverture minimale de l'écran */
         }
         .container {
             display: flex;
