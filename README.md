@@ -1,66 +1,85 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ Instructions pour Démarrer
+Prérequis
+Assurez-vous d'avoir installé PHP, Composer, Node.js, et NPM sur votre machine.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+  Installation
+Clonez le dépôt du projet :
+git clone https://github.com/ElskaWitch/GamerStack.git
 
-## About Laravel
+ Accédez au répertoire du projet :
+cd gamerstack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+ Installez les dépendances PHP avec Composer :
+composer install
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+ Installez les dépendances Node.js avec NPM :
+npm install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+ Créez un fichier d'environnement à partir du modèle :
+cp .env.example .env
 
-## Learning Laravel
+ Générez la clé de l'application Laravel :
+php artisan key:generate
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Configurez votre base de données dans le fichier .env.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+ Exécutez les migrations de base de données :
+php artisan migrate
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ Démarrage du Serveur
+Pour démarrer le serveur de développement PHP, exécutez :
+php artisan serve
 
-## Laravel Sponsors
+ Pour démarrer le serveur de développement front-end, exécutez :
+npm run dev
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Accédez ensuite à l'adresse fournie par la commande php artisan serve (généralement http://localhost:8000) dans votre navigateur pour voir votre application en action. Pour les ressources front-end, accédez à l'adresse fournie par npm run dev.  
+  
+  
+  À propos de Laravel
+Laravel est un framework d'application web avec une syntaxe expressive et élégante. Nous croyons que le développement doit être une expérience agréable et créative pour être véritablement satisfaisant. Laravel facilite le développement en simplifiant les tâches courantes utilisées dans de nombreux projets web, telles que :
 
-### Premium Partners
+  Moteur de routage simple et rapide.
+Conteneur d'injection de dépendances puissant.
+Multiples back-ends pour le stockage des sessions et du cache.
+ORM de base de données expressif et intuitif.
+Migrations de schéma indépendantes de la base de données.
+Traitement robuste des tâches en arrière-plan.
+Diffusion d'événements en temps réel.
+Laravel est accessible, puissant, et fournit les outils nécessaires pour des applications robustes et de grande envergure.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+  Apprendre Laravel
+Laravel dispose de la documentation la plus complète et la plus approfondie ainsi que d'une bibliothèque de tutoriels vidéo, ce qui facilite grandement la prise en main du framework.
 
-## Contributing
+Vous pouvez également essayer le Laravel Bootcamp, où vous serez guidé à travers la création d'une application Laravel moderne depuis le début.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Si vous ne souhaitez pas lire, Laracasts peut vous aider. Laracasts contient des milliers de tutoriels vidéo sur une gamme de sujets incluant Laravel, PHP moderne, tests unitaires, et JavaScript. Améliorez vos compétences en explorant notre vaste bibliothèque vidéo.
 
-## Code of Conduct
+  Sponsors de Laravel
+Nous souhaitons remercier les sponsors suivants pour le financement du développement de Laravel. Si vous êtes intéressé par devenir sponsor, veuillez visiter le programme des partenaires Laravel.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  Partenaires Premium
+Vehikl
+Tighten Co.
+WebReinvent
+Kirschbaum Development Group
+64 Robots
+Curotec
+Cyber-Duck
+DevSquad
+Jump24
+Redberry
+Active Logic
+byte5
+OP.GG
+Contribuer
+Merci de considérer une contribution au framework Laravel ! Le guide de contribution peut être trouvé dans la documentation Laravel.
 
-## Security Vulnerabilities
+  Code de Conduite
+Afin d'assurer que la communauté Laravel soit accueillante pour tous, veuillez lire et respecter le Code de Conduite.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+  Vulnérabilités de Sécurité
+Si vous découvrez une vulnérabilité de sécurité dans Laravel, veuillez envoyer un e-mail à Taylor Otwell via taylor@laravel.com. Toutes les vulnérabilités de sécurité seront rapidement traitées.
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+  Licence
+Le framework Laravel est un logiciel open-source sous licence MIT.
